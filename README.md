@@ -25,3 +25,8 @@ submit your work to plussa before the deadline of each project
 Files related to the voluntary project must be saved to directory
 called project-3 ( create it yourself if you do that project ).
 
+=======
+
+  * Directory : project-1
+
+    - Public code base for project-1
