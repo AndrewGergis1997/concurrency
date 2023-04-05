@@ -21,6 +21,7 @@ TUNI_WARN_ON()
 
 #include <thread>
 #include <chrono>
+#include <barrier>
 
 
 int main(int argc, char *argv[])
@@ -52,13 +53,15 @@ int main(int argc, char *argv[])
 
     // new thread to periodically update the
     // simulation world
+
     std::thread update( [&]() {
+
         while(world::running) {
+
           std::this_thread::sleep_for( config::world_tick );
           world::next_generation();
         };
     });
-
     grview.show();
     app.exec(); // main thread handles the Qt event loop
     update.join(); // collect update thread after app closes
