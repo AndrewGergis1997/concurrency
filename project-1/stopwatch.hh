@@ -17,8 +17,6 @@ public:
 private:
     std::chrono::time_point<std::chrono::high_resolution_clock> starttime_;
 
-    // mutex used to synchronize access to starttime_
-    std::mutex mutex_;
 };
 
 #endif // STOPWATCH_HH
